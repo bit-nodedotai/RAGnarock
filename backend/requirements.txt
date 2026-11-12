@@ -1,0 +1,37 @@
+# --- web ---
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-multipart>=0.0.17
+email-validator>=2.2
+
+# --- persistence ---
+sqlalchemy>=2.0.36
+psycopg[binary]>=3.2
+pgvector>=0.3.6
+alembic>=1.14
+
+# --- configuration & logging ---
+pydantic-settings>=2.6
+structlog>=24.4
+
+# --- providers & embeddings ---
+httpx>=0.28
+sentence-transformers>=3.3
+torch>=2.2
+
+# --- document parsing ---
+pypdf>=5.1
+python-docx>=1.1
+beautifulsoup4>=4.12
+
+# --- auth & crypto ---
+pyjwt>=2.10
+argon2-cffi>=23.1
+
+# --- dev & test ---
+pytest>=8.3
+pytest-cov>=6.0
+ruff>=0.8
+mypy>=1.13
+types-beautifulsoup4>=4.12
+

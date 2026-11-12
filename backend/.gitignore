@@ -4,7 +4,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
-
+ragnarok/*
 # Tooling
 .pytest_cache/
 .mypy_cache/

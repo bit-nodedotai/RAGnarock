@@ -5090,7 +5090,16 @@ issues:
     `Do and do not`.'
   - Use concrete examples from this app; mention the dark slate/sky palette.
   - Run the acceptance command.
-  acceptance_test: test -s docs/design/design-system.md && grep -qi "color" docs/design/design-system.md
+  acceptance_test: >-
+    test -s docs/design/design-system.md &&
+    grep -qi '^## Color$' docs/design/design-system.md &&
+    grep -qi '^## Typography$' docs/design/design-system.md &&
+    grep -qi '^## Spacing$' docs/design/design-system.md &&
+    grep -qi '^## Radius and elevation$' docs/design/design-system.md &&
+    grep -qi '^## Component states$' docs/design/design-system.md &&
+    grep -qi '^## Do and do not$' docs/design/design-system.md &&
+    grep -qi 'slate' docs/design/design-system.md &&
+    grep -qi 'sky' docs/design/design-system.md
   definition_of_done: 'The acceptance command passes locally, the change is limited to the listed files,
     and the PR description links this issue with `Closes #<issue-number>`.'
   track: no-code
@@ -5125,7 +5134,17 @@ issues:
   - 'Add level-2 headings: `Keyboard`, `Focus`, `Labels`, `Color contrast`, `Motion`, `Testing`.'
   - Use concrete examples from this app; mention the dark slate/sky palette.
   - Run the acceptance command.
-  acceptance_test: test -s docs/design/accessibility.md && grep -qi "WCAG" docs/design/accessibility.md
+  acceptance_test: >-
+    test -s docs/design/accessibility.md &&
+    grep -qi 'WCAG' docs/design/accessibility.md &&
+    grep -qi '^## Keyboard$' docs/design/accessibility.md &&
+    grep -qi '^## Focus$' docs/design/accessibility.md &&
+    grep -qi '^## Labels$' docs/design/accessibility.md &&
+    grep -qi '^## Color contrast$' docs/design/accessibility.md &&
+    grep -qi '^## Motion$' docs/design/accessibility.md &&
+    grep -qi '^## Testing$' docs/design/accessibility.md &&
+    grep -qi 'slate' docs/design/accessibility.md &&
+    grep -qi 'sky' docs/design/accessibility.md
   definition_of_done: 'The acceptance command passes locally, the change is limited to the listed files,
     and the PR description links this issue with `Closes #<issue-number>`.'
   track: no-code
@@ -5160,7 +5179,16 @@ issues:
   - 'Add level-2 headings: `Voice`, `Buttons`, `Empty states`, `Errors`, `Confirmation`, `Examples`.'
   - Use concrete examples from this app; mention the dark slate/sky palette.
   - Run the acceptance command.
-  acceptance_test: test -s docs/design/ux-copy.md && grep -qi "error" docs/design/ux-copy.md
+  acceptance_test: >-
+    test -s docs/design/ux-copy.md &&
+    grep -qi '^## Voice$' docs/design/ux-copy.md &&
+    grep -qi '^## Buttons$' docs/design/ux-copy.md &&
+    grep -qi '^## Empty states$' docs/design/ux-copy.md &&
+    grep -qi '^## Errors$' docs/design/ux-copy.md &&
+    grep -qi '^## Confirmation$' docs/design/ux-copy.md &&
+    grep -qi '^## Examples$' docs/design/ux-copy.md &&
+    grep -qi 'slate' docs/design/ux-copy.md &&
+    grep -qi 'sky' docs/design/ux-copy.md
   definition_of_done: 'The acceptance command passes locally, the change is limited to the listed files,
     and the PR description links this issue with `Closes #<issue-number>`.'
   track: no-code
@@ -5195,7 +5223,16 @@ issues:
   - 'Add level-2 headings: `Breakpoints`, `Mobile`, `Tablet`, `Desktop`, `Navigation`, `Testing`.'
   - Use concrete examples from this app; mention the dark slate/sky palette.
   - Run the acceptance command.
-  acceptance_test: test -s docs/design/responsive.md && grep -qi "mobile" docs/design/responsive.md
+  acceptance_test: >-
+    test -s docs/design/responsive.md &&
+    grep -qi '^## Breakpoints$' docs/design/responsive.md &&
+    grep -qi '^## Mobile$' docs/design/responsive.md &&
+    grep -qi '^## Tablet$' docs/design/responsive.md &&
+    grep -qi '^## Desktop$' docs/design/responsive.md &&
+    grep -qi '^## Navigation$' docs/design/responsive.md &&
+    grep -qi '^## Testing$' docs/design/responsive.md &&
+    grep -qi 'slate' docs/design/responsive.md &&
+    grep -qi 'sky' docs/design/responsive.md
   definition_of_done: 'The acceptance command passes locally, the change is limited to the listed files,
     and the PR description links this issue with `Closes #<issue-number>`.'
   track: no-code

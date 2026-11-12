@@ -201,3 +201,51 @@ A quick question is always cheaper than a large, wrong PR.
 - [Setup](event-setup.md)
 - [GitHub workflow](event-github-workflow.md)
 - [Troubleshooting](event-troubleshooting.md)
+
+## Set 3 frontend notes
+
+See the [Set 3 baseline implementation map](event-set3-implementation-map.md)
+for the behavior already present, remaining contributor work, allowed files,
+and verification command for every issue.
+
+Set 3 builds on the frontend that is already in this repository. The app uses
+React 19, TypeScript, Vite, Tailwind CSS v4, React Router, and TanStack Query.
+Authentication, document upload/list/delete, processing status, chat, and
+citations already use the typed client in `frontend/src/api/client.ts` and
+shapes in `frontend/src/api/types.ts`. The backend owns ingestion, retrieval,
+generation, and persistence; a component-only issue does not authorize new API
+work or changes to those contracts.
+
+The current route is `/`, and `frontend/src/pages/workspace.tsx` composes the
+existing panels. Set 3 component issues are standalone building blocks. Unless
+the assigned issue lists an integration file, do not edit the workspace, route,
+auth provider, `chat-panel.tsx`, or `document-panel.tsx` to wire the component
+into the running page. Pass data and actions through typed props where the
+issue calls for a reusable component.
+
+For code issues, install from the lockfile and run the issue's acceptance
+command from the repository root. The frontend tests use Vitest in jsdom with
+React Testing Library; `frontend/src/test/setup.ts` installs the jest-dom
+matchers. Then run the frontend checks from `frontend/`:
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```
+
+Use only the files listed under **Files to touch** in the assigned issue. Most
+Set 3 code issues list both one implementation file and its focused test file;
+write the behavior tests described by that issue rather than a test that only
+checks the component exists. No Set 3 issue currently depends on another Set 3
+issue, so keep components self-contained and do not add a dependency simply to
+reuse an unfinished component.
+
+One issue needs a maintainer decision before assignment:
+
+- `set3-42` asks the CitationList to expose accessible link text, but the
+  current citation type has no link URL and the app has no document or chunk
+  route to link to. Do not invent a destination; clarify whether the acceptance
+  criterion should be accessible citation text without a link or whether a
+  real target is being added separately.
